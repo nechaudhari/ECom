@@ -1,0 +1,40 @@
+{
+  "seller": [
+    {
+      "name": "neha",
+      "email": "mail.com",
+      "password": "abc@123",
+      "id": 1
+    },
+    {
+      "name": "savi",
+      "email": "s@gmail.com",
+      "password": "Savi123",
+      "id": 2
+    },
+    {
+      "name": "savi",
+      "email": "s@gmail.com",
+      "password": "Savi123",
+      "id": 3
+    },
+    {
+      "name": "Sara",
+      "email": "sara@gmail.com",
+      "password": "123",
+      "id": 4
+    },
+    {
+      "name": "Neha Gopal Chaudhari",
+      "email": "neha.chaudhari@hitachivantara.com",
+      "password": "123",
+      "id": 5
+    },
+    {
+      "name": "savi",
+      "email": "s@gmail.com",
+      "password": "567",
+      "id": 6
+    }
+  ]
+}

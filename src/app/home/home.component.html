@@ -1,0 +1,19 @@
+<div class="container-fluid" style="margin-top: 100px;">
+  <div class="card">
+      <div class="grid-item" *ngFor="let item of data ; let i = index"  >
+        <img [src]="item.img" (dblclick)="redirectToDescription(i)" >
+        <div class="item">
+          <h4><b>{{ item.name }}</b></h4>
+          <p>This item cost {{ item.cost }} ₹</p>
+          <div>
+            <button class="btn" (click)="decrement(item)"><i class="fa-solid fa-minus"></i></button>
+            <input [(ngModel)]="item.itemCount" class="quantity" type="number" style="width: 45px;">
+            <button class="btn" (click)="increment(item)"><i class="fa-solid fa-plus"></i></button>
+            <br>         
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
