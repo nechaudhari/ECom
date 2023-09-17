@@ -1,10 +1,10 @@
 <div class="main">
-    <p>Quantity  {{data[index].itemCount}}</p>
+    <p>Quantity  {{counterValue}}</p>
     <div>
         <img [src]="data[index].img" style="width: 40%;height: 40%;" >
         <div class="item">
           <h4><b>{{ data[index].name }}</b></h4>
-          <p>This data[index] cost {{ data[index].cost }} ₹</p>
+          <p>Cost is {{ data[index].cost }} ₹</p>
           <p>Quantity {{data[index].itemCount }}</p>
         </div>
     </div>

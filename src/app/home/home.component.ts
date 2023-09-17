@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ProductsService } from '../services/products.service';
 import { Router } from '@angular/router';
 import { CartService } from '../services/cart.service';
+import { SharedDataService } from '../services/shared-data.service';
 
 
 @Component({
@@ -17,11 +18,15 @@ export class HomeComponent {
   itemCount: number=0;
   
 
-  constructor(private productService:ProductsService, private router:Router, private cartService:CartService){}
+  constructor(private productService:ProductsService, private router:Router, private cartService:CartService, private sharedDataService:SharedDataService){}
 
   ngOnInit(): void {
     this.productService.getData().subscribe(data => {
       this.data = data;
+      //added stored value of count
+      this.data.forEach(item =>{
+        item.itemCount = this.productService.getItemCountFromLocalStorage(item.id);
+      });
     });
     this.itemCount = this.cartService.getCount();
   }
@@ -34,7 +39,11 @@ export class HomeComponent {
     index.itemCount = index.itemCount + 1;
     index.addedItem = true;
 
+    //added stored value of count
     this.productService.increment(index.itemCount);
+    //
+    this.productService.setItemCountInLocalStorage(index.id, index.itemCount);
+    this.sharedDataService.updateItemCount(index.id,index.itemCount);
   }
 
   decrement(index:any){ 
@@ -48,6 +57,10 @@ export class HomeComponent {
         index.addedItem = true;
       }
     }
+    //added stored value of count
+    this.productService.setItemCountInLocalStorage(index.id, index.itemCount);
+    //
+    this.sharedDataService.updateItemCount(index.id,index.itemCount);
   }
 
 }

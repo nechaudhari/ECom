@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../services/products.service';
 import { ActivatedRoute } from '@angular/router';
+import { SharedDataService } from '../services/shared-data.service';
 
 @Component({
   selector: 'app-description',
@@ -13,9 +14,7 @@ export class DescriptionComponent implements OnInit {
   index: number = 0;
 
   constructor(
-    private productService: ProductsService,
-    private route: ActivatedRoute
-  ) {}
+    private productService: ProductsService,private route: ActivatedRoute, private sharedDataService:SharedDataService) {}
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
@@ -24,6 +23,13 @@ export class DescriptionComponent implements OnInit {
     });
     this.productService.getData().subscribe(data => {
       this.data = data;
+    });
+
+    //added
+    this.counterValue = this.productService.getItemCountFromLocalStorage(this.index + 1);
+    //
+    this.sharedDataService.itemCounts$.subscribe(count =>{
+      this.counterValue = count;
     });
   }
 }
