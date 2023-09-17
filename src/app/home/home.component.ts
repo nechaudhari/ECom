@@ -24,8 +24,9 @@ export class HomeComponent {
     this.productService.getData().subscribe(data => {
       this.data = data;
       //added stored value of count
-      this.data.forEach(item =>{
+      this.data.forEach((item,index) =>{
         item.itemCount = this.productService.getItemCountFromLocalStorage(item.id);
+        this.sharedDataService.updateItemCount(index,item.itemCount);
       });
     });
     this.itemCount = this.cartService.getCount();
@@ -41,9 +42,9 @@ export class HomeComponent {
 
     //added stored value of count
     this.productService.increment(index.itemCount);
-    //
+    //update local storage
     this.productService.setItemCountInLocalStorage(index.id, index.itemCount);
-    this.sharedDataService.updateItemCount(index.id,index.itemCount);
+    this.sharedDataService.updateItemCount(index.id - 1,index.itemCount);
   }
 
   decrement(index:any){ 
@@ -57,10 +58,10 @@ export class HomeComponent {
         index.addedItem = true;
       }
     }
-    //added stored value of count
+    //update stored value of count
     this.productService.setItemCountInLocalStorage(index.id, index.itemCount);
-    //
-    this.sharedDataService.updateItemCount(index.id,index.itemCount);
+    //update service
+    this.sharedDataService.updateItemCount(index.id - 1,index.itemCount);
   }
 
 }

@@ -25,11 +25,12 @@ export class DescriptionComponent implements OnInit {
       this.data = data;
     });
 
-    //added
-    this.counterValue = this.productService.getItemCountFromLocalStorage(this.index + 1);
-    //
-    this.sharedDataService.itemCounts$.subscribe(count =>{
-      this.counterValue = count;
+    //to get data from localstorage
+    //this.counterValue = this.productService.getItemCountFromLocalStorage(this.index + 1);
+    this.counterValue = this.sharedDataService.getItemCount(this.index);
+    //get value throough service
+    this.sharedDataService.itemCounts$.subscribe(counts =>{
+      this.counterValue = counts[this.index];
     });
   }
 }
