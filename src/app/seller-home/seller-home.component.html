@@ -1,1 +1,22 @@
-<p>seller-home works!</p>
+<div class="main">
+  <nav class="nav" >
+      <h1>Seller</h1>
+  </nav>
+</div>
+
+<div class="container mt-5">
+  <div class="seller-container mb-4">
+    <div class="seller" *ngFor="let seller of sellers; let i = index">
+      <div class="seller-image">
+        <img [src]="seller.img" />
+      </div>
+      <div class="seller-info">
+        <h5 class="seller-name">{{ seller.name }}</h5>
+        <div *ngFor="let address of seller.address; let j = index">
+          <p *ngIf="j === 0">{{ address.lane }}, {{ address.city }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

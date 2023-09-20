@@ -59,3 +59,25 @@
     border-left: 0px;
     margin-top: 15px;
 }
+
+/* Styles for tablets */
+@media (max-width: 768px) {
+    .nav .nav-search{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+
+/* Styles for mobile */
+@media (max-width: 576px) {
+    .nav .nav-search{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .nav .nav-search input{
+        width: 80%;
+    }
+    .nav .nav-search button{
+        width: 20%;
+    }
+}

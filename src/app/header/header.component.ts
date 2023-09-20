@@ -13,8 +13,6 @@ export class HeaderComponent {
   constructor(private cartService: CartService) {}
 
   ngOnInit() {
-    this.cartItemCount$ = this.cartService.getItemCount(); // Initialize cart count
+    this.cartItemCount$ = this.cartService.getItemCount(); 
   }
-
-
 }

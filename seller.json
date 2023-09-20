@@ -1,0 +1,81 @@
+{
+    "sellers":[
+        {
+            "id": 1,
+            "name": "Neha C",
+            "img": "./assets/images/clothes-2.jpg",
+            "address": [
+                {
+                    "lane": "abc",
+                    "city": "pune"
+                },
+                {
+                    "lane": "xyz",
+                    "city": "mumbai"
+                },
+                {
+                    "lane": "pqr",
+                    "city": "delhi"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Srujan T",
+            "img": "./assets/images/clothes-2.jpg",
+            "address": [
+                {
+                    "lane": "abc",
+                    "city": "pune"
+                },
+                {
+                    "lane": "xyz",
+                    "city": "mumbai"
+                },
+                {
+                    "lane": "pqr",
+                    "city": "delhi"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Snehal H",
+            "img": "./assets/images/clothes-2.jpg",
+            "address": [
+                {
+                    "lane": "abc",
+                    "city": "pune"
+                },
+                {
+                    "lane": "xyz",
+                    "city": "mumbai"
+                },
+                {
+                    "lane": "pqr",
+                    "city": "delhi"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Snehal V",
+            "img": "./assets/images/clothes-2.jpg",
+            "address": [
+                {
+                    "lane": "abc",
+                    "city": "pune"
+                },
+                {
+                    "lane": "xyz",
+                    "city": "mumbai"
+                },
+                {
+                    "lane": "pqr",
+                    "city": "delhi"
+                }
+            ]
+        }
+    ]
+
+}

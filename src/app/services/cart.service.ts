@@ -7,44 +7,42 @@ import { map } from 'rxjs/operators';
 })
 export class CartService {
   private cartItemSubject = new BehaviorSubject<any[]>([]);
-  cartItem$ = this.cartItemSubject.asObservable();
+  cartItems$ = this.cartItemSubject.asObservable();
 
-  constructor(){}
+  constructor() {
+    const savedCartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
+    this.cartItemSubject.next(savedCartItems);
+  }
 
-  // addItemToCart(item:any){
-  //   const currentCartItems = this.cartItemSubject.value;
-  //   const updatedCartItems = [...currentCartItems,item];
-  //   this.cartItemSubject.next(updatedCartItems);
-  // }
+  private updateLocalStorage(cartItems: any[]) {
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  }
+
   addItemToCart(item: any) {
     const currentCartItems = this.cartItemSubject.value;
-    const itemIndex = currentCartItems.findIndex((cartItem: { id: any; }) => cartItem.id === item.id);
+    const itemIndex = currentCartItems.findIndex(cartItem => cartItem.id === item.id);
 
     if (itemIndex === -1) {
-      // If the item is not in the cart, add it
       const updatedCartItems = [...currentCartItems, { ...item, addedItem: true }];
       this.cartItemSubject.next(updatedCartItems);
+      this.updateLocalStorage(updatedCartItems);
     } else {
-      // If the item is already in the cart, update its count
-      currentCartItems[itemIndex].itemCount++;
-      this.cartItemSubject.next(currentCartItems);
+      currentCartItems[itemIndex].itemCount = item.itemCount; 
+      this.cartItemSubject.next(currentCartItems);//updatedCartItems
+      this.updateLocalStorage(currentCartItems);//updatedCartItems
     }
   }
 
-
-  removeItemFromCart(item:any){
+  removeItemFromCart(item: any) {
     const currentCartItems = this.cartItemSubject.value;
-    const updatedCartItems = currentCartItems.filter(cartItem =>cartItem.id !== item.id);
+    const updatedCartItems = currentCartItems.filter(cartItem => cartItem.id !== item.id);
     this.cartItemSubject.next(updatedCartItems);
+    this.updateLocalStorage(updatedCartItems); 
   }
 
   getItemCount(): Observable<number> {
     return this.cartItemSubject.asObservable().pipe(
       map(items => items.reduce((total, item) => total + item.itemCount, 0))
     );
-  } 
-
-  
-
-
+  }
 }

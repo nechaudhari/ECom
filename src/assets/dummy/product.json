@@ -1,96 +1,175 @@
 {
   "items": [
     {
-    "id": 1,
-    "name": "Item 1",
-    "cost": 300,
-    "img": "./assets/images/clothes-2.jpg",
-    "itemCount": 0,
-    "addedItem":false
-  },
-  {
-    "id": 2,
-    "name": "Item 2",
-    "img": "./assets/images/clothes-4.jpg",
-    "itemCount": 0,
-    "addedItem":false
-  },
-  {
-    "id": 3,
-    "name": "Item 3",
-    "img": "./assets/images/jacket-2.jpg",
-    "itemCount": 0,
-    "addedItem":false
-  },
-  {
-    "id": 4,
-    "name": "Item 4",
-    "img": "./assets/images/jacket-5.jpg",
-    "itemCount": 0,
-    "addedItem":false
-  },
-  {
-    "id": 5,
-    "name": "Item 5",
-    "img": "./assets/images/jacket-6.jpg",
-    "itemCount": 0,
-    "addedItem":false
-  },
-  {
-    "id": 6,
-    "name": "Item 6",
-    "img": "./assets/images/party-wear-2.jpg",
-    "itemCount": 0,
-    "addedItem":false
-  },
-  {
-    "id": 7,
-    "name": "Item 7",
-    "img": "./assets/images/shirt-2.jpg",
-    "itemCount": 0,
-    "addedItem":false
-  },
-  {
-    "id": 8,
-    "name": "Item 8",
-    "img": "./assets/images/shoe-1_1.jpg",
-    "itemCount": 0,
-    "addedItem":false
-  },
-  {
-    "id": 9,
-    "name": "Item 9",
-    "img": "./assets/images/shoe-1.jpg",
-    "itemCount": 0,
-    "addedItem":false
-  },
-  {
-    "id": 10,
-    "name": "Item 10",
-    "img": "./assets/images/shorts-2.jpg",
-    "itemCount": 0,
-    "addedItem":false
-  },
-  {
-    "id": 11,
-    "name": "Item 11",
-    "img": "./assets/images/sports-4.jpg",
-    "itemCount": 0,
-    "addedItem":false
-  },
-  {
-    "id": 12,
-    "name": "Item 12",
-    "img": "./assets/images/watch-2.jpg",
-    "itemCount": 0,
-    "addedItem":false
-  },
-  {
-    "id": 13,
-    "name": "Item 13",
-    "img": "./assets/images/watch-4.jpg",
-    "itemCount": 0,
-    "addedItem":false
-  }
-]
+      "id": 1,
+      "name": "Item 1",
+      "cost": 300,
+      "img": "./assets/images/clothes-2.jpg",
+      "itemCount": 0,
+      "addedItem": false
+    },
+    {
+      "id": 2,
+      "name": "Item 2",
+      "img": "./assets/images/clothes-4.jpg",
+      "itemCount": 0,
+      "addedItem": false
+    },
+    {
+      "id": 3,
+      "name": "Item 3",
+      "img": "./assets/images/jacket-2.jpg",
+      "itemCount": 0,
+      "addedItem": false
+    },
+    {
+      "id": 4,
+      "name": "Item 4",
+      "img": "./assets/images/jacket-5.jpg",
+      "itemCount": 0,
+      "addedItem": false
+    },
+    {
+      "id": 5,
+      "name": "Item 5",
+      "img": "./assets/images/jacket-6.jpg",
+      "itemCount": 0,
+      "addedItem": false
+    },
+    {
+      "id": 6,
+      "name": "Item 6",
+      "img": "./assets/images/party-wear-2.jpg",
+      "itemCount": 0,
+      "addedItem": false
+    },
+    {
+      "id": 7,
+      "name": "Item 7",
+      "img": "./assets/images/shirt-2.jpg",
+      "itemCount": 0,
+      "addedItem": false
+    },
+    {
+      "id": 8,
+      "name": "Item 8",
+      "img": "./assets/images/shoe-1_1.jpg",
+      "itemCount": 0,
+      "addedItem": false
+    },
+    {
+      "id": 9,
+      "name": "Item 9",
+      "img": "./assets/images/shoe-1.jpg",
+      "itemCount": 0,
+      "addedItem": false
+    },
+    {
+      "id": 10,
+      "name": "Item 10",
+      "img": "./assets/images/shorts-2.jpg",
+      "itemCount": 0,
+      "addedItem": false
+    },
+    {
+      "id": 11,
+      "name": "Item 11",
+      "img": "./assets/images/sports-4.jpg",
+      "itemCount": 0,
+      "addedItem": false
+    },
+    {
+      "id": 12,
+      "name": "Item 12",
+      "img": "./assets/images/watch-2.jpg",
+      "itemCount": 0,
+      "addedItem": false
+    },
+    {
+      "id": 13,
+      "name": "Item 13",
+      "img": "./assets/images/watch-4.jpg",
+      "itemCount": 0,
+      "addedItem": false
+    }
+  ],
+  
+  "sellers": [
+    {
+      "id": 1,
+      "name": "Neha C",
+      "img": "./assets/images/clothes-2.jpg",
+      "address": [
+        {
+          "lane": "abc",
+          "city": "pune"
+        },
+        {
+          "lane": "xyz",
+          "city": "mumbai"
+        },
+        {
+          "lane": "pqr",
+          "city": "delhi"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Srujan T",
+      "img": "./assets/images/clothes-2.jpg",
+      "address": [
+        {
+          "lane": "abc",
+          "city": "pune"
+        },
+        {
+          "lane": "xyz",
+          "city": "mumbai"
+        },
+        {
+          "lane": "pqr",
+          "city": "delhi"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Snehal H",
+      "img": "./assets/images/clothes-2.jpg",
+      "address": [
+        {
+          "lane": "abc",
+          "city": "pune"
+        },
+        {
+          "lane": "xyz",
+          "city": "mumbai"
+        },
+        {
+          "lane": "pqr",
+          "city": "delhi"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Snehal V",
+      "img": "./assets/images/clothes-2.jpg",
+      "address": [
+        {
+          "lane": "abc",
+          "city": "pune"
+        },
+        {
+          "lane": "xyz",
+          "city": "mumbai"
+        },
+        {
+          "lane": "pqr",
+          "city": "delhi"
+        }
+      ]
+    }
+  ]
 }

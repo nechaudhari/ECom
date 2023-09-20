@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { CartService } from '../services/cart.service';
 import { SharedDataService } from '../services/shared-data.service';
 
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -23,7 +22,6 @@ export class HomeComponent {
   ngOnInit(): void {
     this.productService.getData().subscribe(data => {
       this.data = data;
-      //added stored value of count
       this.data.forEach((item,index) =>{
         item.itemCount = this.productService.getItemCountFromLocalStorage(item.id);
         this.sharedDataService.updateItemCount(index,item.itemCount);
@@ -39,13 +37,11 @@ export class HomeComponent {
     index.itemCount = index.itemCount + 1;
     index.addedItem = true;
 
-    //added stored value of count***************
     this.productService.increment(index.itemCount);
 
-    //update local storage
-    this.productService.setItemCountInLocalStorage(index.id, index.itemCount);
+    this.productService.setItemCountInLocalStorage(index.id, index.itemCount);    
     this.sharedDataService.updateItemCount(index.id - 1,index.itemCount);
-    //update cart count
+
     if (index.addedItem) {
       this.cartService.addItemToCart(index);
     }
@@ -62,11 +58,9 @@ export class HomeComponent {
         index.addedItem = true;
       }
     }
-    //update stored value of count
+    
     this.productService.setItemCountInLocalStorage(index.id, index.itemCount);
-    //update service
     this.sharedDataService.updateItemCount(index.id - 1,index.itemCount);
-    //update cart count
     if (!index.addedItem) {
       this.cartService.removeItemFromCart(index);
     }

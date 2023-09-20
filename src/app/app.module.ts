@@ -13,6 +13,8 @@ import { SellerHomeComponent } from './seller-home/seller-home.component';
 import { DescriptionComponent } from './description/description.component';
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,8 +22,11 @@ import { DescriptionComponent } from './description/description.component';
     HomeComponent,
     SellerAuthComponent,
     NotFoundComponent,
+    // SellerHomeComponent,
     SellerHomeComponent,
-    DescriptionComponent
+    DescriptionComponent,
+   
+    
   ],
   imports: [
     BrowserModule,

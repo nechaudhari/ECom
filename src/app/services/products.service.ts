@@ -26,13 +26,11 @@ export class ProductsService {
     this.counterSubject.next(this.counterSubject.value - count);
   }
 
-  //added
   getItemCountFromLocalStorage(itemId:number): number{
     const count = localStorage.getItem(`itemCount_${itemId}`);
     return count ? parseInt(count,10):0;
   }
 
-  //added
   setItemCountInLocalStorage(itemId:number, count:number){
     localStorage.setItem(`itemCount_${itemId}`, count.toString());
   }
